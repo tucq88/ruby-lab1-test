@@ -8,3 +8,7 @@
 10.times.each do
     Photo.create({username: Faker::Name.name, caption: Faker::Lorem.sentence, likes_count: Faker::Number.number(2), url: Faker::Avatar.image("manchester-united", "500x500") });
 end
+
+Photo.all.each do |photo|
+    photo.comments.create({username: Faker::Name.name, body: Faker::Lorem.sentence});
+end
