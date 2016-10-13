@@ -5,4 +5,11 @@
         <p class="card-text"><%=  photo.caption %></p>
         <%= link_to 'Go anywhere' , '#' %>
         </div>
+        <div class="card-footer">
+            <ul class="list-comments">
+                <% photo.comments.each do |comment| %>
+                    <%= render 'comment', comment: comment %>
+                <% end %>
+            </ul>
+        </div>
 </div>
